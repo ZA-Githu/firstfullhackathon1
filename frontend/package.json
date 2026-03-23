@@ -1,0 +1,13 @@
+{
+  "name": "ai-native-book-frontend",
+  "version": "1.0.0",
+  "description": "AI-Native Driven Development book — powered by Docusaurus",
+  "private": true,
+  "scripts": {
+    "dev": "cd ../docusaurus-site && npm start",
+    "start": "cd ../docusaurus-site && npm start",
+    "build": "cd ../docusaurus-site && npm run build",
+    "serve": "cd ../docusaurus-site && npm run serve",
+    "clear": "cd ../docusaurus-site && npm run clear"
+  }
+}

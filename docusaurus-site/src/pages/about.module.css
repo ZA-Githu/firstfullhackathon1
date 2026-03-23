@@ -1,0 +1,34 @@
+.aboutPage { padding: 5rem 0 7rem; }
+.hero { text-align: center; margin-bottom: 4rem; }
+.badge {
+  display: inline-block; padding: 0.4rem 1.1rem; margin-bottom: 1.5rem;
+  background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.3);
+  border-radius: 999px; font-size: 0.82rem; color: #0891b2; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.title {
+  font-size: clamp(2rem, 4vw, 3rem) !important; font-weight: 900 !important;
+  margin-bottom: 1rem !important; letter-spacing: -0.02em;
+}
+.subtitle { font-size: 1.1rem; color: var(--ifm-color-emphasis-600); max-width: 560px; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 4rem; }
+.card {
+  padding: 2.25rem 2rem; border-radius: 20px;
+  border: 1px solid rgba(6,182,212,0.15); background: var(--card-bg);
+  box-shadow: 0 4px 24px rgba(6,182,212,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(6,182,212,0.15); }
+.cardIcon { font-size: 2.2rem; margin-bottom: 1rem; }
+.hardware { text-align: center; }
+.hwGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.hwItem {
+  padding: 2rem 1.5rem; border-radius: 16px; text-align: center;
+  border: 1px solid rgba(6,182,212,0.15); background: var(--card-bg);
+}
+.hwItem span { font-size: 2rem; display: block; margin-bottom: 0.75rem; }
+.hwItem p { font-size: 0.85rem; color: var(--ifm-color-emphasis-600); margin: 0.5rem 0 0; }
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .hwGrid { grid-template-columns: 1fr; }
+}

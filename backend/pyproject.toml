@@ -1,0 +1,13 @@
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[flake8]
+max-line-length = 88
+ignore = "E203,W503"

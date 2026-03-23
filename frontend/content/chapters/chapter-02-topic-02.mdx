@@ -1,0 +1,38 @@
+---
+chapterNumber: 2
+topicNumber: 2
+title: "Prompt Engineering as a First-Class Skill"
+description: "Mastering the craft of writing prompts that produce reliable outputs at scale."
+slug: "chapter-02-topic-02"
+---
+
+## Prompt Engineering as a First-Class Skill
+
+Every effective prompt has five components: Role, Context, Task, Format, and Constraints.
+Role tells the AI who it is in this context. Context gives background it needs to understand
+the task. Task defines exactly what to do. Format specifies the output structure. Constraints
+list what must not happen.
+
+### Chain-of-Thought Prompting
+
+Ask the AI to reason step-by-step before concluding. For example: "Before recommending an
+approach, list three options with tradeoffs, then choose the one that best fits our constraints."
+This surfaces flawed assumptions before they become implemented decisions.
+
+### Few-Shot Prompting for Consistency
+
+When generating multiple similar artifacts, provide one complete example and ask the AI to match
+it exactly. Without an example each output differs. With it output is consistent and predictable
+across all instances.
+
+### Common Failure Modes
+
+Ambiguous scope produces wrong implementations. Missing format specifications produce wrong output
+shapes. Missing constraints allow wrong technology choices. Asking for too much at once produces
+unreviewed, unstructured results. Break every large task into the spec-plan-tasks-implement pipeline.
+
+### Building a Prompt Library
+
+Maintain a versioned library of high-performing prompts covering spec generation, code review,
+debugging, and content creation. Test the library whenever you upgrade models. Share it across the
+team. Treat it as a competitive asset that compounds value over time.

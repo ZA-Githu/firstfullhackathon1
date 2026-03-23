@@ -1,0 +1,96 @@
+/* ── Wrapper ── */
+.authWrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Signed-out buttons ── */
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.signInBtn {
+  padding: 0.45rem 1.1rem;
+  background: transparent;
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(6,182,212,0.45);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.signInBtn:hover {
+  background: rgba(6,182,212,0.12);
+  border-color: #06b6d4;
+  color: #67e8f9;
+}
+
+.signUpBtn {
+  padding: 0.45rem 1.15rem;
+  background: linear-gradient(135deg, #06b6d4, #0284c7);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 14px rgba(6,182,212,0.4);
+  white-space: nowrap;
+}
+
+.signUpBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(6,182,212,0.55);
+}
+
+/* ── Signed-in row ── */
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.greeting {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+}
+
+.greeting strong {
+  color: #67e8f9;
+  font-weight: 700;
+}
+
+/* ── UserButton avatar size ── */
+.avatarBox {
+  width: 34px !important;
+  height: 34px !important;
+}
+
+/* ── Popover card override ── */
+.popoverCard {
+  border-radius: 14px !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25) !important;
+}
+
+/* Light theme adjustments */
+[data-theme='light'] .signInBtn {
+  color: #1e293b;
+  border-color: rgba(6,182,212,0.4);
+}
+
+[data-theme='light'] .signInBtn:hover {
+  color: #0891b2;
+}
+
+[data-theme='light'] .greeting {
+  color: #475569;
+}

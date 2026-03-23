@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+cohere
+openai
+langchain
+langchain-text-splitters
+qdrant-client
+asyncpg
+slowapi
+httpx
+python-dotenv
+tiktoken
+anthropic

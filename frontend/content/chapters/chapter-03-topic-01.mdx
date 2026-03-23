@@ -1,0 +1,36 @@
+---
+chapterNumber: 3
+topicNumber: 1
+title: "Architecture Patterns for AI-Native Apps"
+description: "RAG, agent loops, structured output, and the evaluation-feedback loop."
+slug: "chapter-03-topic-01"
+---
+
+## Architecture Patterns for AI-Native Apps
+
+Four foundational patterns power every production AI-Native system.
+
+### Pattern 1: Retrieval-Augmented Generation
+
+RAG retrieves relevant context from your data and injects it into the prompt. Use RAG when your
+product has proprietary knowledge the model lacks, when you need citations, or when fine-tuning
+is not feasible. Start with 512-token chunks and twenty percent overlap, then tune based on
+retrieval quality metrics.
+
+### Pattern 2: Agent Loops
+
+Agent loops let the AI take actions, observe results, and decide next steps. Define stop conditions
+to prevent runaway execution. Require human approval for irreversible actions. Give agents minimum
+permissions. Log every tool call with inputs, outputs, and timestamps for auditability.
+
+### Pattern 3: Structured Output
+
+Force the model to produce JSON your application can parse reliably. Define schemas with Zod in
+TypeScript or Pydantic in Python. Use tool_choice to guarantee schema compliance. Validate all
+outputs before passing them downstream.
+
+### Pattern 4: The Evaluation-Feedback Loop
+
+Production traffic flows through evaluation generating metrics that inform prompt improvements.
+Build evaluation infrastructure before optimising prompts. Teams that run this loop rigorously
+see quality compound over months.

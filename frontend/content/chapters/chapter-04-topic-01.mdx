@@ -1,0 +1,31 @@
+---
+chapterNumber: 4
+topicNumber: 1
+title: "Testing AI-Native Features"
+description: "Building reliable evaluation frameworks for non-deterministic AI outputs."
+slug: "chapter-04-topic-01"
+---
+
+## Testing AI-Native Features
+
+Evaluation-based testing checks whether outputs meet quality criteria rather than matching exact
+expected values. Quality criteria include relevance, factual correctness, format compliance,
+safety, and appropriate length.
+
+### Golden Set Evaluation
+
+Maintain a curated collection of input and expected-output pairs where expected output is a quality
+bar. Build it from real production traffic with human ratings. Re-run evaluations whenever you
+change prompts, models, or pipeline configuration.
+
+### AI-as-Judge Evaluation
+
+For large-scale evaluation where human rating is too expensive, use a separate AI model as judge.
+Calibrate the judge by comparing its scores to human ratings on a sample. A well-calibrated judge
+correlates with human judgment without always giving high scores.
+
+### Regression Testing and Contract Tests
+
+Block deploys that introduce regressions on your golden set without explicit human approval.
+Write contract tests validating output schema correctness and run them in CI on every commit.
+Run quality evaluations on a schedule or before significant releases.

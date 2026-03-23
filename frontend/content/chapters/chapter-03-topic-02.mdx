@@ -1,0 +1,31 @@
+---
+chapterNumber: 3
+topicNumber: 2
+title: "Data Pipelines and Model Integration"
+description: "Building the data infrastructure that makes AI-Native systems reliable and improving."
+slug: "chapter-03-topic-02"
+---
+
+## Data Pipelines and Model Integration
+
+Raw data flows through ingestion, chunking, embedding, vector storage, retrieval, and into the
+model. Each layer has failure modes. Your pipeline is only as reliable as its weakest link.
+
+### Embedding Pipelines and Vector Stores
+
+Embeddings convert text to vectors capturing semantic meaning. Start with pgvector for PostgreSQL
+shops handling under one million vectors. Use Pinecone for large-scale production. Use Chroma for
+development and small-to-medium scale. Start with pgvector and migrate only when proven necessary.
+
+### Typed Function Calls
+
+Tool use bridges the AI text world and your typed application world. Define tools with JSON Schema.
+Set tool_choice to guarantee the AI calls the right tool. Return tool results back to the model for
+synthesis. Validate all structured outputs with Zod before using them downstream.
+
+### Streaming for User Experience
+
+Always stream responses longer than a sentence. A three-second wait for a complete response feels
+broken. The same three seconds with text streaming in feels fast and responsive. Streaming is
+non-negotiable for production user experience. Use the messages stream API and iterate over
+content block delta events to send chunks to the client as they arrive.

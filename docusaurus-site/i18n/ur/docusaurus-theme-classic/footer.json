@@ -1,0 +1,46 @@
+{
+  "link.title.Textbook": {
+    "message": "نصابی کتاب",
+    "description": "The title of the footer links column with title=Textbook in the footer"
+  },
+  "link.title.More Chapters": {
+    "message": "مزید ابواب",
+    "description": "The title of the footer links column with title=More Chapters in the footer"
+  },
+  "link.title.Resources": {
+    "message": "وسائل",
+    "description": "The title of the footer links column with title=Resources in the footer"
+  },
+  "link.item.label.Introduction": {
+    "message": "تعارف",
+    "description": "The label of footer link with label=Introduction linking to /docs/intro"
+  },
+  "link.item.label.Chapter 1 — AI-Native Dev": {
+    "message": "باب 1 — اے آئی نیٹو ڈویلپمنٹ",
+    "description": "The label of footer link with label=Chapter 1 — AI-Native Dev linking to /docs/chapter-01/topic-01"
+  },
+  "link.item.label.Chapter 2 — Spec-Driven Dev": {
+    "message": "باب 2 — اسپیک پر مبنی ڈویلپمنٹ",
+    "description": "The label of footer link with label=Chapter 2 — Spec-Driven Dev linking to /docs/chapter-02/topic-01"
+  },
+  "link.item.label.Chapter 3 — Architecture": {
+    "message": "باب 3 — آرکیٹیکچر",
+    "description": "The label of footer link with label=Chapter 3 — Architecture linking to /docs/chapter-03/topic-01"
+  },
+  "link.item.label.Chapter 4 — Testing & Monitoring": {
+    "message": "باب 4 — ٹیسٹنگ اور مانیٹرنگ",
+    "description": "The label of footer link with label=Chapter 4 — Testing & Monitoring linking to /docs/chapter-04/topic-01"
+  },
+  "link.item.label.Chapter 5 — Emerging Patterns": {
+    "message": "باب 5 — ابھرتے ہوئے نمونے",
+    "description": "The label of footer link with label=Chapter 5 — Emerging Patterns linking to /docs/chapter-05/topic-01"
+  },
+  "link.item.label.GitHub": {
+    "message": "گٹ ہب",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/your-github-username/ai-native-book"
+  },
+  "copyright": {
+    "message": "جملہ حقوق محفوظ © 2026 فزیکل اے آئی اور ہیومنائیڈ روبوٹکس نصابی کتاب۔ Docusaurus کے ساتھ بنایا گیا۔",
+    "description": "The footer copyright"
+  }
+}

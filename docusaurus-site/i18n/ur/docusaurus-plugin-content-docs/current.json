@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "موجودہ",
+    "description": "The label for version current"
+  },
+  "sidebar.bookSidebar.category.Chapter 1: Introduction to AI-Native": {
+    "message": "باب 1: اے آئی نیٹو کا تعارف",
+    "description": "The label for category 'Chapter 1: Introduction to AI-Native' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 2: The AI-Native Workflow": {
+    "message": "باب 2: اے آئی نیٹو ورک فلو",
+    "description": "The label for category 'Chapter 2: The AI-Native Workflow' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 3: Architecture and Data": {
+    "message": "باب 3: آرکیٹیکچر اور ڈیٹا",
+    "description": "The label for category 'Chapter 3: Architecture and Data' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 4: Quality and Operations": {
+    "message": "باب 4: معیار اور آپریشنز",
+    "description": "The label for category 'Chapter 4: Quality and Operations' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 5: The Future and the Team": {
+    "message": "باب 5: مستقبل اور ٹیم",
+    "description": "The label for category 'Chapter 5: The Future and the Team' in sidebar 'bookSidebar'"
+  }
+}

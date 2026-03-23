@@ -1,0 +1,30 @@
+---
+chapterNumber: 4
+topicNumber: 2
+title: "Monitoring, Observability, and Feedback Loops"
+description: "Instrumenting AI-Native systems for reliability, cost control, and continuous improvement."
+slug: "chapter-04-topic-02"
+---
+
+## Monitoring, Observability, and Feedback Loops
+
+The four pillars of AI observability are latency at p50/p95/p99, cost per call and per user,
+quality via user feedback signals, and safety via harm scoring and block rates.
+
+### Tracing AI Calls
+
+Trace every AI call end-to-end with OpenTelemetry spans recording model, token counts, and latency
+at each processing stage. Use structured JSON logging with correlation IDs linking log lines to
+traces. This makes debugging quality issues possible and turns incidents into learning opportunities.
+
+### The User Feedback Flywheel
+
+Collect feedback on AI outputs. Analyse which outputs receive negative feedback and why. Form
+hypotheses about prompt changes. A/B test new versus old prompts on live traffic. Deploy winners.
+Monitor to confirm improvement holds. This flywheel compounds quality over time.
+
+### Prompt Version Management
+
+Treat prompts as code. Version them with meaningful IDs. Review changes. Test before deploying.
+Monitor after deploying. Maintain rollback capability within minutes. Track per-version quality
+metrics so you always know whether recent changes improved or degraded performance.

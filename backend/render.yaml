@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: ai-native-book-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: QDRANT_COLLECTION
+        value: ai-native-book
+      - key: DATABASE_URL
+        sync: false
+      - key: INGEST_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+      - key: MAX_ANSWER_TOKENS
+        value: "400"
+      - key: LOG_RETENTION_DAYS
+        value: "7"

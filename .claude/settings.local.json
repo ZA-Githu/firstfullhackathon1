@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(venv/Scripts/python:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)",
+      "Bash(ls:*)",
+      "Bash(\"C:/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/backend/.env\":*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(powershell:*)",
+      "Bash(for i in 1 2 3 4 5)",
+      "Bash(do)",
+      "Bash(echo \"=== chapter-0$i/topic-01.md ===\")",
+      "Read(//c/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/docusaurus-site/docs/chapter-0$i/**)",
+      "Bash(done)",
+      "Bash(for f in \"chapter-01-topic-01\" \"chapter-02-topic-01\" \"chapter-03-topic-01\" \"chapter-04-topic-01\" \"chapter-05-topic-01\")",
+      "Bash(echo \"=== $f ===\")",
+      "Read(//c/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/frontend/content/chapters/**)",
+      "Bash(for f in \"chapter-01-topic-01\" \"chapter-01-topic-02\" \"chapter-02-topic-01\" \"chapter-02-topic-02\" \"chapter-03-topic-01\" \"chapter-03-topic-02\" \"chapter-04-topic-01\" \"chapter-04-topic-02\" \"chapter-05-topic-01\" \"chapter-05-topic-02\")",
+      "Bash(echo \"===START:$f===\")",
+      "Bash(echo \"===END:$f===\")",
+      "Bash(\"C:/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/docusaurus-site/i18n/ur/docusaurus-theme-classic/navbar.json\":*)",
+      "Bash(npm install:*)",
+      "Bash(\"C:/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/docusaurus-site/.env.local\":*)",
+      "Bash(npm start:*)",
+      "Bash(cd \"C:/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/frontend\" && npm run dev 2>&1)",
+      "Bash(cd \"C:/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/frontend\" && node -e \"const c = require\\('@clerk/nextjs'\\); console.log\\(Object.keys\\(c\\).filter\\(k => k.toLowerCase\\(\\).includes\\('sign'\\) || k.toLowerCase\\(\\).includes\\('user'\\)\\)\\)\")",
+      "Bash(pkill -f \"next dev\" 2>/dev/null; pkill -f \"node.*next\" 2>/dev/null; echo \"killed\")",
+      "Bash(find \"C:/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/frontend/content/\" -name \"*.md\" -o -name \"*.mdx\" 2>/dev/null | head -30)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/frontend/**)",
+      "Bash(cd \"C:/Users/Ismat Zehra/3D Objects/newhackathon1/ai-native-book/backend\" && source venv/Scripts/activate && pip install -r requirements.txt 2>&1 | tail -20)"
+    ]
+  }
+}
