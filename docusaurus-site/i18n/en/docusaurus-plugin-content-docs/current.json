@@ -1,0 +1,26 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.bookSidebar.category.Chapter 1: Introduction to AI-Native": {
+    "message": "Chapter 1: Introduction to AI-Native",
+    "description": "The label for category 'Chapter 1: Introduction to AI-Native' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 2: The AI-Native Workflow": {
+    "message": "Chapter 2: The AI-Native Workflow",
+    "description": "The label for category 'Chapter 2: The AI-Native Workflow' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 3: Architecture and Data": {
+    "message": "Chapter 3: Architecture and Data",
+    "description": "The label for category 'Chapter 3: Architecture and Data' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 4: Quality and Operations": {
+    "message": "Chapter 4: Quality and Operations",
+    "description": "The label for category 'Chapter 4: Quality and Operations' in sidebar 'bookSidebar'"
+  },
+  "sidebar.bookSidebar.category.Chapter 5: The Future and the Team": {
+    "message": "Chapter 5: The Future and the Team",
+    "description": "The label for category 'Chapter 5: The Future and the Team' in sidebar 'bookSidebar'"
+  }
+}

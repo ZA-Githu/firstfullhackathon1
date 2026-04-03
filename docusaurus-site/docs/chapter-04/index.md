@@ -1,5 +1,5 @@
 ---
-id: chapter-04
+id: index
 title: "Chapter 4: Quality and Operations"
 sidebar_label: "Chapter 4 Overview"
 ---

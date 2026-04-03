@@ -1,5 +1,5 @@
 ---
-id: chapter-03
+id: index
 title: "Chapter 3: Architecture and Data"
 sidebar_label: "Chapter 3 Overview"
 ---

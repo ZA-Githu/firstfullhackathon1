@@ -1,5 +1,5 @@
 ---
-id: chapter-02
+id: index
 title: "Chapter 2: The AI-Native Workflow"
 sidebar_label: "Chapter 2 Overview"
 ---

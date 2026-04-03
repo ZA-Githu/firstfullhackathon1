@@ -1,37 +1,37 @@
 ---
 id: topic-01
-title: "AI-Native خصوصیات کی جانچ"
-sidebar_label: "AI-Native خصوصیات کی جانچ"
+title: "AI-Native فیچرز کی ٹیسٹنگ"
+sidebar_label: "AI-Native فیچرز کی ٹیسٹنگ"
 ---
 
-## AI-Native خصوصیات کی جانچ
+## AI-Native فیچرز کی ٹیسٹنگ
 
-تشخیص پر مبنی جانچ یہ جانچتی ہے کہ آیا آؤٹ پٹ معیار کے معیار پر پورا اترتے ہیں نہ کہ عین متوقع قدروں سے ملانا۔ معیار کے معیار میں مطابقت، حقائق کی درستگی، شکل کی تعمیل، حفاظت اور مناسب لمبائی شامل ہیں۔
+Evaluation-based ٹیسٹنگ چیک کرتی ہے کہ آیا آؤٹ پٹس معیار کے معیار کو پورا کرتے ہیں نہ کہ بالکل متوقع اقدار سے مماثلت رکھتے ہیں۔ معیار کے معیار میں متعلقہ ہونا، حقیقت پسندانہ درستگی، فارمیٹ کی تعمیل، حفاظت، اور مناسب لمبائی شامل ہیں۔
 
-### روایتی جانچ AI کے لیے کیوں ناکام ہوتی ہے
+### AI کے لیے روایتی ٹیسٹنگ کیوں ناکام ہوتی ہے
 
 ```python
-# This will ALWAYS fail for AI — outputs are non-deterministic
-assert llm.generate("What is ROS 2?") == "ROS 2 is a robotics middleware..."
+# یہ AI کے لیے ہمیشہ ناکام ہو جائے گا — آؤٹ پٹس غیر یقینی ہیں
+assert llm.generate("ROS 2 کیا ہے؟") == "ROS 2 ایک roboٹکس middleware ہے..."
 
-# This is correct — evaluate against quality criteria
-result = llm.generate("What is ROS 2?")
+# یہ درست ہے — معیار کے معیار کے خلاف تشخیص کریں
+result = llm.generate("ROS 2 کیا ہے؟")
 assert "middleware" in result.lower() or "robot" in result.lower()
 assert len(result) > 50
 assert not contains_hallucination(result)
 ```
 
-### گولڈن سیٹ تشخیص
+### Golden Set Evaluation
 
-ان پٹ/متوقع-آؤٹ پٹ جوڑوں کا منتخب مجموعہ برقرار رکھیں جہاں متوقع آؤٹ پٹ ایک معیار کی حد ہے، عین میل نہیں۔
+ان پٹ/متوقع-آؤٹ پٹ جوڑوں کا ایک curated مجموعہ برقرار رکھیں جہاں متوقع آؤٹ پٹ ایک معیار کی بار ہے، نہ کہ بالکل مماثلت۔
 
 ```python
 GOLDEN_SET = [
     {
-        "input": "What is Nav2?",
+        "input": "Nav2 کیا ہے؟",
         "expected_keywords": ["navigation", "ROS 2", "planner"],
         "min_length": 50,
-        "must_not_contain": ["I don't know", "I cannot"]
+        "must_not_contain": ["مجھے نہیں معلوم", "میں نہیں کر سکتا"]
     },
     # ...
 ]
@@ -45,39 +45,39 @@ def evaluate_golden_set(model_fn):
     return sum(scores) / len(scores)
 ```
 
-انسانی درجہ بندیوں کے ساتھ حقیقی پروڈکشن ٹریفک سے بنائیں۔ جب بھی prompts، ماڈلز، یا پائپ لائن کنفیگریشن تبدیل کریں تشخیص دوبارہ چلائیں۔
+اسے انسانی درجہ بندی کے ساتھ حقیقی پروڈکشن ٹریفک سے بنائیں۔ جب بھی آپ prompts، ماڈلز، یا پائپ لائن کنفیگریشن کو تبدیل کریں تو evaluations کو دوبارہ چلائیں۔
 
-### AI بطور جج تشخیص
+### AI-as-Judge Evaluation
 
-بڑے پیمانے پر تشخیص کے لیے جہاں انسانی درجہ بندی بہت مہنگی ہو، ایک الگ AI ماڈل کو جج کے طور پر استعمال کریں۔
+بڑے پیمانے کی evaluation کے لیے جہاں انسانی درجہ بندی بہت مہنگی ہے، جج کے طور پر ایک الگ AI ماڈل استعمال کریں۔
 
 ```python
 JUDGE_PROMPT = """
-Rate this answer on a scale of 1-5 for:
-- Accuracy (is it factually correct?)
-- Relevance (does it answer the question?)
-- Completeness (is it thorough enough?)
+اس جواب کو 1-5 کے پیمانے پر درجہ دیں:
+- درستگی (کیا یہ حقیقت پسندانہ طور پر درست ہے؟)
+- متعلقہ ہونا (کیا یہ سوال کا جواب دیتا ہے؟)
+- مکمل ہونا (کیا یہ کافی تفصیلی ہے؟)
 
-Question: {question}
-Answer: {answer}
+سوال: {question}
+جواب: {answer}
 
-Respond with JSON: {{"accuracy": N, "relevance": N, "completeness": N}}
+JSON کے ساتھ جواب دیں: {{"accuracy": N, "relevance": N, "completeness": N}}
 """
 ```
 
-جج کو نمونے پر انسانی درجہ بندیوں سے اس کے اسکور کا موازنہ کر کے کیلیبریٹ کریں۔ ایک اچھا کیلیبریٹ جج انسانی فیصلے سے مطابقت رکھتا ہے۔
+جج کو کیلیبریٹ کریں by comparing its scores to human ratings on a sample. ایک اچھی طرح کیلیبریٹڈ جج انسانی فیصلے کے ساتھ correlate کرتا ہے۔
 
-### CI میں Regression جانچ
+### CI میں Regression ٹیسٹنگ
 
 ```yaml
 # .github/workflows/eval.yml
-- name: Run evaluation suite
+- name: Evaluation suite چلائیں
   run: python -m pytest tests/evals/ --threshold=0.85
-  # Block deploy if quality drops below 85%
+  # اگر معیار 85% سے نیچے گرتا ہے تو ڈپلائے کو روکیں
 ```
 
-وہ تعیناتیاں روکیں جو واضح انسانی منظوری کے بغیر آپ کے گولڈن سیٹ پر regressions متعارف کراتی ہیں۔
+ان واضح انسانی منظوری کے بغیر regressions متعارف کرانے والے ڈپلائمنٹس کو روکیں۔
 
 :::tip
-ہر commit پر آؤٹ پٹ schema درستگی کی تصدیق کرنے والے contract tests چلائیں۔ معیار کی تشخیص ایک شیڈول پر یا اہم ریلیز سے پہلے چلائیں۔
+ہر commit پر آؤٹ پٹ schema کی درستگی کی تصدیق کرنے والے contract ٹیسٹس چلائیں۔ معیار کی evaluations کو شیڈول پر یا اہم ریلیزز سے پہلے چلائیں۔
 :::

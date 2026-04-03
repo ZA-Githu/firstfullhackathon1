@@ -1,5 +1,5 @@
 ---
-id: chapter-01
+id: index
 title: "Chapter 1: Introduction to AI-Native"
 sidebar_label: "Chapter 1 Overview"
 ---

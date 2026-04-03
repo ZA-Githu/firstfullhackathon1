@@ -6,7 +6,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
-const features = [
+const featuresEn = [
   {
     title: 'ROS 2 & Navigation',
     icon: '🤖',
@@ -45,7 +45,46 @@ const features = [
   },
 ];
 
-const chapters = [
+const featuresUr = [
+  {
+    title: 'ROS 2 اور نیویگیشن',
+    icon: '🤖',
+    description:
+      'ROS 2 نوڈز، ٹاپکس، سروسز، ایکشنز، DDS مڈل ویئر، اور خود مختار ہیومنائیڈ روبوٹس کے لیے Nav2 نیویگیشن اسٹیک میں مہارت حاصل کریں۔',
+  },
+  {
+    title: 'RAG AI چیٹ بوٹ',
+    icon: '💬',
+    description:
+      'ہر صفحے پر بلٹ ان AI اسسٹنٹ موجود ہے جو Retrieval-Augmented Generation سے چلتا ہے۔ کسی بھی متن کو منتخب کریں اور سیاق و سباق میں سوالات پوچھیں۔',
+  },
+  {
+    title: 'NVIDIA Isaac پلیٹ فارم',
+    icon: '🌐',
+    description:
+      'Isaac Sim طبیعیاتیاتی محاكاة کے لیے، Isaac ROS ہارڈویئر ایکسلریٹڈ پرسیپشن کے لیے، Isaac Lab RL-based لوکوموشن ٹریننگ کے لیے۔',
+  },
+  {
+    title: 'VLA ماڈلز',
+    icon: '⚡',
+    description:
+      'Vision-Language-Action ماڈلز: RT-2, OpenVLA, π0۔ Jetson Orin Nano پر ٹرین اور ڈپلائ کریں حقیقی دنیا کے ہیومنائیڈ کنٹرول کے لیے۔',
+  },
+  {
+    title: 'سمولیشن: Gazebo اور Unity',
+    icon: '📋',
+    description:
+      'Gazebo Harmonic اور Unity Robotics Hub میں سم ماحول بنائیں۔ Unitree G1/H1 روبوٹس کے لیے sim-to-real ٹرانسفر میں مہارت حاصل کریں۔',
+  },
+  {
+    title: 'Physical AI ہارڈویئر',
+    icon: '🚀',
+    description:
+      'Jetson Orin Nano (40 TOPS)، RTX 4090/5090 GPUs، اور Unitree G1/H1 ہیومنائیڈ روبوٹس کے ساتھ Python SDK کے ذریعے عملی تجربہ۔',
+  },
+];
+
+const chaptersEn = [
   { num: '01', title: 'Introduction to AI-Native Dev', desc: 'The paradigm shift powering the next generation of robotics engineers.', color: '#6366f1' },
   { num: '02', title: 'Spec-Driven Dev & Prompting', desc: 'Structured specs, prompt engineering, and the AI-Native workflow.', color: '#8b5cf6' },
   { num: '03', title: 'Architecture & Data Pipelines', desc: 'RAG, agent loops, vector stores, and model integration patterns.', color: '#06b6d4' },
@@ -53,15 +92,34 @@ const chapters = [
   { num: '05', title: 'Emerging Patterns & Teams', desc: 'VLA models, multimodal AI, agents as OS, and AI-Native culture.', color: '#f59e0b' },
 ];
 
-const stats = [
+const chaptersUr = [
+  { num: '01', title: 'AI-Native ڈویلپمنٹ کا تعارف', desc: 'پیراڈائم شفٹ جو روبوٹکس انجینئرز کی اگلی نسل کو طاقت دے رہی ہے۔', color: '#6366f1' },
+  { num: '02', title: 'اسپیک پر مبنی ڈویلپمنٹ اور پرامپٹنگ', desc: 'ساختہ اسپیکس، پرامپٹ انجینئرنگ، اور AI-Native ورک فلو۔', color: '#8b5cf6' },
+  { num: '03', title: 'آرکیٹیکچر اور ڈیٹا پائپ لائنز', desc: 'RAG، ایجنٹ لوپس، ویکٹر اسٹورز، اور ماڈل انٹیگریشن پیٹرنز۔', color: '#06b6d4' },
+  { num: '04', title: 'ٹیسٹنگ اور مانیٹرنگ', desc: 'ایولیوشن فریم ورکس، آبزرویبلٹی، اور فیڈ بیک فلائی وہیل۔', color: '#10b981' },
+  { num: '05', title: 'ابھرتے ہوئے نمونے اور ٹیمیں', desc: 'VLA ماڈلز، ملٹی موڈل AI، ایجنٹس بطور OS، اور AI-Native کلچر۔', color: '#f59e0b' },
+];
+
+const statsEn = [
   { value: '5', label: 'Chapters' },
   { value: 'ROS 2', label: 'Framework' },
   { value: 'RAG', label: 'AI Chatbot' },
   { value: 'VLA', label: 'Models' },
 ];
 
-function HomepageHeader(): JSX.Element {
+const statsUr = [
+  { value: '5', label: 'ابواب' },
+  { value: 'ROS 2', label: 'فریم ورک' },
+  { value: 'RAG', label: 'AI چیٹ بوٹ' },
+  { value: 'VLA', label: 'ماڈلز' },
+];
+
+function HomepageHeader({isUrdu}: {isUrdu: boolean}): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
+  const displayTitle = isUrdu ? 'فزیکل اے آئی اور ہیومنائیڈ روبوٹکس' : siteConfig.title;
+  const displayTagline = isUrdu 
+    ? 'فزیکل اے آئی، ہیومنائیڈ روبوٹکس، ROS 2، NVIDIA Isaac، اور VLA ماڈلز پر AI-Native انٹرایکٹو ٹیکسٹ بک'
+    : siteConfig.tagline;
   return (
     <header className={styles.heroBanner}>
       <div className={styles.heroBackground}>
@@ -71,26 +129,27 @@ function HomepageHeader(): JSX.Element {
       </div>
       <div className={clsx('container', styles.heroContent)}>
         <div className={styles.heroBadge}>
-          <span>✨ Panaversity Hackathon 1 — Built with Docusaurus</span>
+          <span>{isUrdu ? '✨ Panaversity Hackathon 1 — Docusaurus کے ساتھ بنایا گیا' : '✨ Panaversity Hackathon 1 — Built with Docusaurus'}</span>
         </div>
         <Heading as="h1" className={styles.heroTitle}>
-          {siteConfig.title}
+          {displayTitle}
         </Heading>
-        <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
+        <p className={styles.heroSubtitle}>{displayTagline}</p>
         <p className={styles.heroDescription}>
-          Master Physical AI and Humanoid Robotics — from ROS 2 and NVIDIA Isaac to VLA models deployed
-          on Jetson Orin Nano and Unitree G1/H1 robots. Built with Docusaurus as an AI-Native interactive textbook.
+          {isUrdu 
+            ? 'Physical AI اور ہیومنائیڈ روبوٹکس میں مہارت حاصل کریں — ROS 2 اور NVIDIA Isaac سے لے کر VLA ماڈلز تک جو Jetson Orin Nano اور Unitree G1/H1 روبوٹس پر ڈپلائ ہوتے ہیں۔ AI-Native انٹرایکٹو ٹیکسٹ بک جو Docusaurus کے ساتھ بنائی گئی۔'
+            : 'Master Physical AI and Humanoid Robotics — from ROS 2 and NVIDIA Isaac to VLA models deployed on Jetson Orin Nano and Unitree G1/H1 robots. Built with Docusaurus as an AI-Native interactive textbook.'}
         </p>
         <div className={styles.heroButtons}>
           <Link className={styles.btnPrimary} to="/docs/intro">
-            📖 Start Reading
+            {isUrdu ? '📖 پڑھنا شروع کریں' : '📖 Start Reading'}
           </Link>
           <Link className={styles.btnSecondary} to="/docs/chapter-01/topic-01">
-            Chapter 1 →
+            {isUrdu ? 'باب 1 →' : 'Chapter 1 →'}
           </Link>
         </div>
         <div className={styles.heroStats}>
-          {stats.map(s => (
+          {(isUrdu ? statsUr : statsEn).map(s => (
             <div key={s.label} className={styles.statItem}>
               <span className={styles.statValue}>{s.value}</span>
               <span className={styles.statLabel}>{s.label}</span>
@@ -115,18 +174,22 @@ function FeatureCard({title, icon, description}: {title: string; icon: string; d
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const {siteConfig, i18n} = useDocusaurusContext();
+  const isUrdu = i18n.currentLocale === 'ur';
+  const features = isUrdu ? featuresUr : featuresEn;
+  const chapters = isUrdu ? chaptersUr : chaptersEn;
+
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
-      <HomepageHeader />
+      <HomepageHeader isUrdu={isUrdu} />
 
       <main>
         {/* Features */}
         <section className={styles.featuresSection}>
           <div className="container">
             <div className={styles.sectionHeader}>
-              <Heading as="h2" className={styles.sectionTitle}>Everything You Need</Heading>
-              <p className={styles.sectionSubtitle}>A comprehensive guide covering Physical AI, Humanoid Robotics, ROS 2, NVIDIA Isaac, and VLA Models</p>
+              <Heading as="h2" className={styles.sectionTitle}>{isUrdu ? 'آپ کو جو کچھ چاہیے' : 'Everything You Need'}</Heading>
+              <p className={styles.sectionSubtitle}>{isUrdu ? 'Physical AI، ہیومنائیڈ روبوٹکس، ROS 2، NVIDIA Isaac، اور VLA ماڈلز کا جامع گائیڈ' : 'A comprehensive guide covering Physical AI, Humanoid Robotics, ROS 2, NVIDIA Isaac, and VLA Models'}</p>
             </div>
             <div className={styles.featuresGrid}>
               {features.map(feat => (
@@ -140,8 +203,8 @@ export default function Home(): ReactNode {
         <section className={styles.chaptersSection}>
           <div className="container">
             <div className={styles.sectionHeader}>
-              <Heading as="h2" className={styles.sectionTitle}>What You Will Learn</Heading>
-              <p className={styles.sectionSubtitle}>Five chapters taking you from AI-Native fundamentals to deploying VLA models on humanoid robots</p>
+              <Heading as="h2" className={styles.sectionTitle}>{isUrdu ? 'آپ کیا سیکھیں گے' : 'What You Will Learn'}</Heading>
+              <p className={styles.sectionSubtitle}>{isUrdu ? 'پانچ باب جو AI-Native بنیادی باتوں سے لے کر ہیومنائیڈ روبوٹس پر VLA ماڈلز ڈپلائ کرنے تک آپ کو لے جاتے ہیں' : 'Five chapters taking you from AI-Native fundamentals to deploying VLA models on humanoid robots'}</p>
             </div>
             <div className={styles.chaptersGrid}>
               {chapters.map((ch, i) => (
@@ -152,7 +215,7 @@ export default function Home(): ReactNode {
                   <div className={styles.chapterBar} style={{background: ch.color}} />
                   <strong className={styles.chapterTitle}>{ch.title}</strong>
                   <p className={styles.chapterDesc}>{ch.desc}</p>
-                  <span className={styles.chapterArrow} style={{color: ch.color}}>Read →</span>
+                  <span className={styles.chapterArrow} style={{color: ch.color}}>{isUrdu ? 'پڑھیں →' : 'Read →'}</span>
                 </Link>
               ))}
             </div>
@@ -164,17 +227,18 @@ export default function Home(): ReactNode {
           <div className="container">
             <div className={styles.ctaCard}>
               <div className={styles.ctaOrb} />
-              <Heading as="h2" className={styles.ctaTitle}>Ready to Build Physical AI?</Heading>
+              <Heading as="h2" className={styles.ctaTitle}>{isUrdu ? 'Physical AI بنانے کے لیے تیار ہیں؟' : 'Ready to Build Physical AI?'}</Heading>
               <p className={styles.ctaSubtitle}>
-                Start with the introduction and work through all five chapters — from AI-Native fundamentals
-                to deploying VLA models on Unitree humanoid robots. The RAG chatbot is ready to help on every page.
+                {isUrdu 
+                  ? 'تعارف سے شروع کریں اور پانچوں بابوں پر کام کریں — AI-Native بنیادی باتوں سے لے کر Unitree ہیومنائیڈ روبوٹس پر VLA ماڈلز ڈپلائ کرنے تک۔ RAG چیٹ بوٹ ہر صفحے پر مدد کے لیے تیار ہے۔'
+                  : 'Start with the introduction and work through all five chapters — from AI-Native fundamentals to deploying VLA models on Unitree humanoid robots. The RAG chatbot is ready to help on every page.'}
               </p>
               <div className={styles.ctaButtons}>
                 <Link className={styles.btnPrimary} to="/docs/intro">
-                  Get Started Free
+                  {isUrdu ? 'مفت شروع کریں' : 'Get Started Free'}
                 </Link>
                 <Link className={styles.btnGhost} to="/docs/chapter-01/topic-01">
-                  Jump to Chapter 1
+                  {isUrdu ? 'باب 1 پر جائیں' : 'Jump to Chapter 1'}
                 </Link>
               </div>
             </div>

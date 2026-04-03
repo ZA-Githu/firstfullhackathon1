@@ -1,24 +1,24 @@
 ---
 id: topic-02
-title: "ڈیٹا پائپ لائنز اور ماڈل انضمام"
+title: "ڈیٹا پائپ لائنز اور ماڈل انٹیگریشن"
 sidebar_label: "ڈیٹا پائپ لائنز"
 ---
 
-## ڈیٹا پائپ لائنز اور ماڈل انضمام
+## ڈیٹا پائپ لائنز اور ماڈل انٹیگریشن
 
-خام ڈیٹا ingestion، chunking، embedding، ویکٹر اسٹوریج، retrieval سے گزر کر ماڈل میں جاتا ہے۔ ہر پرت میں ناکامی کے طریقے ہیں۔ آپ کی پائپ لائن صرف اتنی ہی قابل اعتماد ہے جتنی اس کی سب سے کمزور کڑی۔
+خام ڈیٹا ingestion، chunking، embedding، vector storage، retrieval، اور ماڈل میں بہتا ہے۔ ہر تہہ میں ناکامی کی موڈز ہیں۔ آپ کی پائپ لائن صرف اس کے کمزور ترین لنک جتنی قابل اعتماد ہے۔
 
-### Embedding پائپ لائنز اور ویکٹر اسٹورز
+### Embedding پائپ لائنز اور Vector Stores
 
-Embeddings متن کو ایسے vectors میں تبدیل کرتے ہیں جو معنوی مفہوم کو پکڑتے ہیں۔
+Embeddings ٹیکسٹ کو vectors میں تبدیل کرتی ہیں جو معنوی معنی کو پکڑتی ہیں۔
 
-| اسٹور | بہترین استعمال | پیمانہ |
+| Store | بہترین کے لیے | پیمانہ |
 |---|---|---|
 | **pgvector** | PostgreSQL دکانیں | < 1M vectors |
 | **Qdrant** | پروڈکشن، اعلی کارکردگی | لاکھوں vectors |
-| **Chroma** | ترقی، مقامی | چھوٹا-درمیانہ |
+| **Chroma** | ترقی، لوکل | چھوٹا-درمیانہ |
 
-pgvector سے شروع کریں اور صرف اس وقت منتقل ہوں جب ثابت ضروری ہو۔
+pgvector کے ساتھ شروع کریں اور صرف اس وقت منتقل کریں جب ثابت ہو کہ ضروری ہے۔
 
 ### Chunking حکمت عملی
 
@@ -33,16 +33,16 @@ splitter = RecursiveCharacterTextSplitter(
 chunks = splitter.split_text(document)
 ```
 
-اچھی chunking معنوی اکائیوں کو محفوظ رکھتی ہے۔ خراب chunking جملوں کو درمیان میں کاٹتی ہے، retrieval معیار کو تباہ کرتی ہے۔
+اچھا chunking معنوی اکائیوں کو محفوظ رکھتا ہے۔ برا chunking جملوں کو درمیانِ فکر کاٹتا ہے، retrieval کے معیار کو تباہ کرتا ہے۔
 
-### ٹائپ شدہ فنکشن کالز (Tool Use)
+### Typed Function Calls (ٹول استعمال)
 
-Tool use AI کی متنی دنیا اور آپ کی ٹائپ شدہ ایپلیکیشن دنیا کے درمیان پل بناتا ہے۔
+ٹول استعمال AI کی ٹیکسٹ دنیا اور آپ کی typed ایپلیکیشن دنیا کو جوڑتا ہے۔
 
 ```python
 tools = [{
     "name": "search_textbook",
-    "description": "Search the Physical AI textbook for relevant content",
+    "description": "طبیعی AI کی کتاب میں متعلقہ مواد تلاش کریں",
     "input_schema": {
         "type": "object",
         "properties": {
@@ -54,9 +54,9 @@ tools = [{
 }]
 ```
 
-### صارف تجربے کے لیے Streaming
+### صارف کے تجربے کے لیے Streaming
 
-ایک جملے سے لمبے جوابات ہمیشہ stream کریں۔ مکمل جواب کے لیے ۳ سیکنڈ کا انتظار ٹوٹا ہوا لگتا ہے۔ وہی ۳ سیکنڈ متن streaming میں آتے ہوئے تیز لگتے ہیں۔
+ہمیشہ ایک جملے سے لمبے responses کو stream کریں۔ مکمل response کے لیے 3 سیکنڈ کا انتظار ٹوٹا ہوا محسوس ہوتا ہے۔ ٹیکسٹ streaming میں اسی 3 سیکنڈ کو تیز محسوس ہوتا ہے۔
 
 ```python
 with client.messages.stream(
@@ -65,7 +65,7 @@ with client.messages.stream(
     max_tokens=1024,
 ) as stream:
     for text in stream.text_stream:
-        yield text  # Send chunk to client immediately
+        yield text  # فوراً کلائنٹ کو chunk بھیجیں
 ```
 
-Streaming پروڈکشن صارف تجربے کے لیے ناگزیر ہے۔
+پروڈکشن صارف کے تجربے کے لیے streaming غیر مذاکراتی ہے۔

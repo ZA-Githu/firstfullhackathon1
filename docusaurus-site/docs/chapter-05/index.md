@@ -1,5 +1,5 @@
 ---
-id: chapter-05
+id: index
 title: "Chapter 5: The Future and the Team"
 sidebar_label: "Chapter 5 Overview"
 ---
