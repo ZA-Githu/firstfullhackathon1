@@ -18,15 +18,9 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // GitHub Pages deployment URL
-  url: 'https://your-github-username.github.io',
-  baseUrl: '/ai-native-book/',
-
-  // GitHub Pages deployment config
-  organizationName: 'your-github-username',
-  projectName: 'ai-native-book',
-  deploymentBranch: 'gh-pages',
-  trailingSlash: false,
+  // Vercel deployment URL
+  url: 'https://firstfullhackathon1.vercel.app',
+  baseUrl: '/',
 
   onBrokenLinks: 'warn',
 
@@ -48,7 +42,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/your-github-username/ai-native-book/tree/main/docusaurus-site/',
+          editUrl:
+            'https://github.com/your-username/your-repo/tree/main/docusaurus-site/',
         },
         blog: false,
         theme: {
@@ -98,7 +93,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/your-github-username/ai-native-book',
+          href: 'https://github.com/your-username/your-repo',
           label: 'GitHub',
           position: 'right',
         },
@@ -130,7 +125,7 @@ const config: Config = {
         {
           title: 'Resources',
           items: [
-            { label: 'GitHub', href: 'https://github.com/your-github-username/ai-native-book' },
+            { label: 'GitHub', href: 'https://github.com/your-username/your-repo' },
           ],
         },
       ],
